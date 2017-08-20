@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { Text } from './text';
-import { RESTAPIText } from './rest-api-text.service';
+import { TextSchema } from './textSchema';
+import { RestAPI } from './restAPI.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './templates/app.component.html',
+  styleUrls: ['./css/app.component.css']
 })
 export class AppComponent {
   title = 'Corpus';

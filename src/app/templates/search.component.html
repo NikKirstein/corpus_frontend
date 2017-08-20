@@ -1,0 +1,31 @@
+<h2>Search</h2>
+
+<div *ngIf="SearchResults">
+  <ul class="heroes">
+    <li *ngFor="let result of SearchResults.search_results">
+      <a routerLink="/text/{{result.title}}" routerLinkActive="active">Text {{result.title}}</a>
+      <div *ngIf="result.search_api_excerpt" [innerHTML]="result.search_api_excerpt"></div>
+    </li>
+  </ul>
+</div>
+
+Some test searches:
+
+<a routerLink="/search/mother" routerLinkActive="active">"Mother"</a>
+<a routerLink="/search/friend" routerLinkActive="active">"friend"</a>
+<a routerLink="/search/truth" routerLinkActive="active">"truth"</a>
+<!-- <div>
+  <a routerLink="/text/10922" routerLinkActive="active">Text 10922</a>
+</div> -->
+
+
+<!-- <div *ngIf="record">
+  <h2>{{record.title}}<div *ngIf="record.year"> ({{record.year}})</div></h2>
+  <div *ngIf="record.artist"><strong>Artist:</strong> {{record.artist}}</div>
+  <div *ngIf="record.genre"><strong>Genre:</strong> {{record.genre}}</div>
+  <div *ngIf="record.label"><strong>Label:</strong> {{record.label}}</div>
+  <div *ngIf="record.number"><strong>Number:</strong> {{record.number}}</div>
+  <div *ngIf="record.cost"><strong>Cost:</strong> {{record.cost}}</div>
+  <div *ngIf="record.image"><img src="{{record.image}}" width="250" /></div>
+  <div *ngIf="record.notes"><label>Notes: </label>{{record.notes}}</div>
+</div> -->

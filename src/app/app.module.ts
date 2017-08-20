@@ -5,9 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home.component';
 import { TextComponent } from './text.component';
-import { RESTAPIText } from './rest-api-text.service';
+import { RestAPI } from './restAPI.service';
 import { SearchComponent } from './search.component';
-import { PageNotFoundComponent } from './pagenotfound.component';
+import { NotFoundComponent } from './notFound.component';
 
 const appRoutes: Routes = [
   { path: 'text/:id', component: TextComponent },
@@ -15,7 +15,10 @@ const appRoutes: Routes = [
   {
     path: 'search',
     component: SearchComponent,
-    data: { title: 'Search Corpus' }
+  },
+  {
+    path: 'search/:string',
+    component: SearchComponent,
   },
   { path: '',
     redirectTo: '/home',
@@ -25,7 +28,7 @@ const appRoutes: Routes = [
     redirectTo: '/search',
     pathMatch: 'full'
   },
-  { path: '**', component: PageNotFoundComponent }
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
@@ -34,17 +37,17 @@ const appRoutes: Routes = [
     HomeComponent,
     TextComponent,
     SearchComponent,
-    PageNotFoundComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true }
+      { enableTracing: false }
     )
   ],
-  providers: [RESTAPIText],
+  providers: [RestAPI],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
