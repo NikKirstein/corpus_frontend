@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { TextSchema } from './textSchema';
-import { RestAPI } from './restAPI.service';
+import { TextSchema } from '../text/textSchema';
+import { RestAPI } from '../restAPI.service';
 import { ActivatedRoute, Params }   from '@angular/router';
 
 @Component({
-  templateUrl: './templates/text.component.html',
-  styleUrls: ['./css/app.component.css']
+  templateUrl: '../text/text.component.html',
+  styleUrls: ['../text/text.component.css']
 })
 
 export class TextComponent {

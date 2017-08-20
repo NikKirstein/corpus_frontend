@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
-import { RestAPI } from './restAPI.service';
+import { RestAPI } from '../restAPI.service';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { RouterModule, Routes } from '@angular/router';
 import { Router } from '@angular/router';
 
 @Component({
-  templateUrl: './templates/search.component.html',
-  styleUrls: ['./css/app.component.css']
+  templateUrl: '../search/search.component.html',
+  styleUrls: ['../search/search.component.css']
 })
 
 export class SearchComponent {

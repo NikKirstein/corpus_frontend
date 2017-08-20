@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule }    from '@angular/http';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { AppComponent } from './main/app.component';
 import { FormsModule } from '@angular/forms';
-import { HomeComponent } from './home.component';
-import { TextComponent } from './text.component';
+import { HomeComponent } from './home/home.component';
+import { TextComponent } from './text/text.component';
 import { RestAPI } from './restAPI.service';
-import { SearchComponent } from './search.component';
-import { NotFoundComponent } from './notFound.component';
+import { SearchComponent } from './search/search.component';
+import { NotFoundComponent } from './404/notFound.component';
 
 const appRoutes: Routes = [
   { path: 'text/:id', component: TextComponent },
