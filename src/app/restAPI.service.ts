@@ -6,8 +6,8 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class RestAPI {
-  private textBase = 'http://crow.local/api/text/';
-  private searchBase = 'http://crow.local/api/search/';
+  private textBase = 'https://writecrow.corporaproject.org/api/text/';
+  private searchBase = 'https://writecrow.corporaproject.org/api/search/';
 
   constructor(
     public http: Http
