@@ -10,3 +10,16 @@ body {
   background-color: #636363;
   color:#fff;
 }
+
+a {
+ color:#4B0082;
+}
+a:hover, a:focus {
+	color:#9400d3;
+}
+
+.shadow {
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+}
