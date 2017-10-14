@@ -1,17 +1,112 @@
-<h2>Search {{ inputted }}</h2>
+<div class="container">
+  <div class="row">
 
-<div>
-  <input #searchBox id="search-box" [(ngModel)]="inputted" />
-  <button (click)="search(searchBox.value)">Search</button>
-</div>
-<div *ngIf="SearchResults">
-  <ul>
-    <li *ngFor="let result of SearchResults.search_results">
-      <a routerLink="/text/{{result.title}}" routerLinkActive="active">Text {{result.title}}</a>
-      <div *ngIf="result.search_api_excerpt" [innerHTML]="result.search_api_excerpt"></div>
-    </li>
-  </ul>
-</div>
-<div *ngIf="NotFound == true">
-  <h3>No results found for "{{ inputted }}"</h3>
-</div>
+    <div class="col-sm-3 search-facets">
+			<details>
+			  <summary>Assignment</summary>
+			  <ul>
+			  	<li><input type="checkbox" />1 (959)</li>
+			  	<li><input type="checkbox" />2 (1498)</li>
+			  	<li><input type="checkbox" />3 (273)</li>
+			  	<li><input type="checkbox" />4 (1236)</li>
+			  	<li><input type="checkbox" />5 (1257)</li>	
+			  </ul>
+			</details>
+			<details>
+			  <summary>Draft</summary>
+			  <ul>
+			  	<li><input type="checkbox" />A (378)</li>
+			  	<li><input type="checkbox" />B (276)</li>
+			  	<li><input type="checkbox" />C (332)</li>
+			  	<li><input type="checkbox" />D (531)</li>
+			  	<li><input type="checkbox" />E (494)</li>	
+			  </ul>
+			</details>
+			<details>
+			  <summary>College</summary>
+			  <ul>
+			  	<li><input type="checkbox" />A (278)</li>
+			  	<li><input type="checkbox" />E (1037)</li>
+			  	<li><input type="checkbox" />EC (23)</li>
+			  	<li><input type="checkbox" />EU (76)</li>
+			  	<li><input type="checkbox" />HH (365)</li>	
+			  </ul>
+			</details>
+			<details>
+			  <summary>Program</summary>
+			  <ul>
+			  	<li><input type="checkbox" />Accounting-BS (23)</li>
+			  	<li><input type="checkbox" />Accounting Undecided (75)</li>
+			  	<li><input type="checkbox" />Aeronautic Engr Technology-BS (5)</li>
+			  	<li><input type="checkbox" />Agricultural Econ-BS (53)</li>
+			  	<li><input type="checkbox" />Agricultural Econ-Sales-BS (6)</li>	
+			  </ul>
+			</details>
+			<details open>
+			  <summary>Country</summary>
+			  <ul>
+			  	<li><input type="checkbox" />Bangladesh (35)</li>
+			  	<li><input type="checkbox" />Brazil (10)</li>
+			  	<li><input type="checkbox" />China (3552)</li>
+			  	<li><input type="checkbox" />Colombia (21)</li>
+			  	<li><input type="checkbox" />Czech Republic (9)</li>	
+			  </ul>
+			</details>
+			<details open>
+			  <summary>Gender</summary>
+			  <ul>
+			  	<li><input type="checkbox" />Female (2263)</li>
+			  	<li><input type="checkbox" />Male (2960)</li>
+			  </ul>
+			</details>
+		</div><!-- /.sidebar -->
+
+    <div class="col-sm-9 search-results">
+			<div>
+			  <input #searchBox id="search-box" [(ngModel)]="inputted" />
+			  <button (click)="search(searchBox.value)">Search</button>
+			</div>
+			<details>
+			  <summary>Advanced Search</summary>
+			  <h4>Search method</h4>
+			    <input type="radio" name="method" checked> Keyword(s)
+  				<input type="radio" name="method"> Lemma
+  				<input type="radio" name="method"> Exact phrase
+  			<details>
+			  	<summary>Keyword matching</summary>
+			  	<input type="radio" name="matching" checked> Contains any keyword
+  				<input type="radio" name="matching"> Contains all keywords
+  				<input type="radio" name="matching"> Does not contain keywords
+			  </details>
+			</details>
+			<div *ngIf="SearchResults">
+				<div class="row search-headings">
+					<div class="col-md-2">ID</div>
+					<div class="col-md-2">Assignment</div>
+					<div class="col-md-2">Draft</div>
+					<div class="col-md-2">College</div>
+					<div class="col-md-2">TOEFL</div>	
+				</div>							
+
+				<div class="search-result" *ngFor="let result of SearchResults.search_results">
+					<div class="row">
+					  <div class="col-md-2"><a routerLink="/text/{{result.title}}" routerLinkActive="active">{{result.title}}</a></div>
+					  <div class="col-md-2">Assignment</div>
+					  <div class="col-md-2">Draft</div>
+					  <div class="col-md-2">College</div>
+					  <div class="col-md-2">{{ result.field_toefl_total }}</div>
+				  </div>
+				  <div class="row">
+						<div class="col-md-12" *ngIf="result.search_api_excerpt" [innerHTML]="result.search_api_excerpt"></div>
+					</div>
+				</div>
+
+			</div><!-- SearchResults -->
+				<div *ngIf="NotFound == true">
+				  <h3>No results found for "{{ inputted }}"</h3>
+				</div>
+
+    </div><!-- /.main -->
+   
+  </div><!-- /.row -->
+</div><!-- /.container -->
