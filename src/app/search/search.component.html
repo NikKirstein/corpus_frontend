@@ -58,20 +58,58 @@
 			  	<li><input type="checkbox" />Male (2960)</li>
 			  </ul>
 			</details>
+			<details open>
+			  <summary>TOEFL Scores</summary>
+			  <aside>
+			  	Select a low-high boundary for TOEFL scores.<br />
+			    <label for="toeflLow">Min:</label>
+			    <select id="toeflLow">
+			    	<option>0</option>
+			      <option>10</option>
+			      <option>20</option>
+			      <option>30</option>
+			      <option>40</option>
+			      <option>50</option>
+			      <option>60</option>
+			      <option>70</option>
+			      <option>80</option>
+			      <option>90</option>
+			      <option>100</option>
+			      <option>110</option>
+			      <option>120</option>
+			    </select>
+			    <label for="toeflHigh">Max:</label>
+			    <select id="toeflHigh">
+			      <option>10</option>
+			      <option>20</option>
+			      <option>30</option>
+			      <option>40</option>
+			      <option>50</option>
+			      <option>60</option>
+			      <option>70</option>
+			      <option>80</option>
+			      <option>90</option>
+			      <option>100</option>
+			      <option>110</option>
+			      <option selected="selected">120</option>
+			    </select>
+			   </aside>
+			</details>
+
 		</div><!-- /.sidebar -->
 
     <div class="col-sm-9 search-results">
 			
-				<form class="form-inline">
-			  <input #searchBox id="search-box" class="form-control" placeholder="Enter keywords..." [(ngModel)]="inputted" />
-			  <button class="btn btn-secondary" (click)="search(searchBox.value)">Search</button>
+				<form id="search-box" class="form-inline">
+			  <input #searchBox id="search-box" name="keywords" class="form-control" placeholder="Enter keywords..." [(ngModel)]="inputted" />
+			  <button name="submit" class="btn btn-secondary" (click)="search(searchBox.value)">Search</button>
 			  </form>
 			
 			<details>
 			  <summary>Advanced Search</summary>
 			  <h4>Search method</h4>
 			    <input type="radio" name="method" checked> Keyword(s)
-  				<input type="radio" name="method"> Lemma
+  				<div class="d-inline" data-toggle="tooltip" data-placement="top" title="Lemma searches return results matching the 'canonical' form of the word (e.g., a search for 'be' would retrieve results with the word 'been')"><input type="radio" name="method"> Lemma</div>
   				<input type="radio" name="method"> Exact phrase
   			<details>
 			  	<summary>Keyword matching</summary>
@@ -91,7 +129,7 @@
 
 				<div class="search-result" *ngFor="let result of SearchResults.search_results">
 					<div class="row">
-					  <div class="col-md-2"><a routerLink="/text/{{result.title}}" routerLinkActive="active">{{result.title}}</a></div>
+					  <div class="col-md-2"><a routerLink="/text/{{result.title}}" routerLinkActive="active"><strong>{{result.title}}</strong></a></div>
 					  <div class="col-md-2">Assignment</div>
 					  <div class="col-md-2">Draft</div>
 					  <div class="col-md-2">College</div>

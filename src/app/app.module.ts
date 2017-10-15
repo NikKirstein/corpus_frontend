@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './main/app.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { PageComponent } from './page/page.component';
 import { TextComponent } from './text/text.component';
 import { RestAPI } from './restAPI.service';
 import { SearchComponent } from './search/search.component';
@@ -13,6 +14,7 @@ import { NotFoundComponent } from './404/notFound.component';
 const appRoutes: Routes = [
   { path: 'text/:id', component: TextComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'repository', component: PageComponent },
   {
     path: 'search',
     component: SearchComponent,
@@ -36,6 +38,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
+    PageComponent,
     TextComponent,
     SearchComponent,
     NotFoundComponent,

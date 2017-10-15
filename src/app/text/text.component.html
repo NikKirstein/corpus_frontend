@@ -1,6 +1,36 @@
-<div *ngIf="TextObject">
-  <h2>Text {{ TextObject.title }}</h2>
-
-  <div [innerHTML]="TextObject.field_text">
-  </div>
+<div class="container">
+	<dl class="row">
+	  <dt *ngIf="TextObject.field_gender" class="col-sm-2">Gender</dt>
+	  <dd *ngIf="TextObject.field_gender" class="col-sm-4">{{ TextObject.field_gender }}</dd>	
+	  <dt *ngIf="TextObject.field_college" class="col-sm-2">College</dt>
+	  <dd *ngIf="TextObject.field_college" class="col-sm-4">{{ TextObject.field_college }}</dd>	
+	  <dt *ngIf="TextObject.field_program" class="col-sm-2">Program</dt>
+	  <dd *ngIf="TextObject.field_program" class="col-sm-4">{{ TextObject.field_program }}</dd>	
+	  <dt *ngIf="TextObject.field_assignment" class="col-sm-2">Assignment</dt>
+	  <dd *ngIf="TextObject.field_assignment" class="col-sm-4">{{ TextObject.field_assignment }}</dd>	
+	  <dt *ngIf="TextObject.field_draft" class="col-sm-2">Draft</dt>
+	  <dd *ngIf="TextObject.field_draft" class="col-sm-4">{{ TextObject.field_draft }}</dd>
+	  <dt *ngIf="TextObject.field_country" class="col-sm-2">Country</dt>
+	  <dd *ngIf="TextObject.field_country" class="col-sm-4">{{ TextObject.field_country }}</dd>	
+	  <dt *ngIf="TextObject.field_filename" class="col-sm-2">Filename</dt>
+	  <dd *ngIf="TextObject.field_filename" class="col-sm-4">{{ TextObject.field_filename }}</dd>
+	  <dt *ngIf="TextObject.field_toefl_listening" class="col-sm-2">TOEFL Listening</dt>
+	  <dd *ngIf="TextObject.field_toefl_listening" class="col-sm-4">{{ TextObject.field_toefl_listening }}</dd>		
+	  <dt *ngIf="TextObject.field_toefl_speaking" class="col-sm-2">TOEFL Speaking</dt>
+	  <dd *ngIf="TextObject.field_toefl_speaking" class="col-sm-4">{{ TextObject.field_toefl_speaking }}</dd>	
+	  <dt *ngIf="TextObject.field_reading" class="col-sm-2">TOEFL Reading</dt>
+	  <dd *ngIf="TextObject.field_reading" class="col-sm-4">{{ TextObject.field_toefl_reading }}</dd>	
+	  <dt *ngIf="TextObject.field_writing" class="col-sm-2">TOEFL Writing</dt>
+	  <dd *ngIf="TextObject.field_writing" class="col-sm-4">{{ TextObject.field_toefl_writing }}</dd>		
+	  <dt *ngIf="TextObject.field_toefl_total" class="col-sm-2">TOEFL Total</dt>
+	  <dd *ngIf="TextObject.field_toefl_total" class="col-sm-4">{{ TextObject.field_toefl_total }}</dd>		    	
+	 </dl>
+	<div class="row">
+		<div class="col-md-11 light-panel">
+			<div *ngIf="TextObject">
+  			<h2>Text {{ TextObject.title }}</h2>
+  			<div [innerHTML]="TextObject.field_text"></div>
+			</div>
+		</div>
+	</div>
 </div>
