@@ -1,0 +1,22 @@
+#header {
+	background-color:#a19d99;
+	margin-bottom:1rem;
+	color:#fff;
+}
+#header h1 {
+	text-transform: uppercase;
+	font-weight:bold;
+	border-bottom:2px solid white;
+	letter-spacing: 1rem;
+}
+.title, .header-search {
+	padding-top:1.5rem;
+}
+.logo {
+	width:140px;
+}
+.header-search input {
+ border-radius:5px;
+ -moz-border-radius:5px;
+ -webkit-border-radius:5px;
+}

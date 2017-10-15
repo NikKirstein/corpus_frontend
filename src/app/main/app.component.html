@@ -1,14 +1,35 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div id="header">
-  <h1>
-    {{title}}
-  </h1>
-</div>
+<div class="container-fluid" id="header">
+	<div class="row">
+		<div class="col-md-2">
+			<div class="logo-wrapper d-inline-block">
+				<a routerLink="/" routerLinkActive="active"><img class="logo" [src]="LOGO" /></a>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="title align-middle">
+				<h1>{{ title }}</h1>
+				{{ subtitle }}
+			</div>
+		</div>
+		<div class="col-md-5">
+			<div class="header-search align-middle">
+			<a class="btn btn-secondary" routerLink="/search" routerLinkActive="active">Search Corpus</a>
+			<a class="btn btn-secondary" routerLink="/search" routerLinkActive="active">Browse Repository</a>
+			</div>
+		</div>
+	</div>
 
-<nav>
-  <a routerLink="/search" routerLinkActive="active">Search</a> | <a routerLink="/" routerLinkActive="active">Home</a>
-  <router-outlet></router-outlet>
-</nav>
+<!--   <nav class="row">
+  	<div class="col-md-12 nav">
+	  	<a routerLink="/" routerLinkActive="active">Home</a>
+	  	<a routerLink="/search" routerLinkActive="active">Search</a>
+	  	
+		</div>
+	</nav> -->
+</div>
+<router-outlet></router-outlet>
+
 
 
 

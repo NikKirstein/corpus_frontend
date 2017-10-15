@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TextSchema } from '../text/textSchema';
 import { RestAPI } from '../restAPI.service';
+declare var require: any;
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,7 @@ import { RestAPI } from '../restAPI.service';
   styleUrls: ['../main/app.component.css']
 })
 export class AppComponent {
-  title = 'Corpus front-end test';
+  title = 'Crow';
+  subtitle = 'Corpus & Repository of Writing'
+  private LOGO = require("./assets/logo.png");
 }

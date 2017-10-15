@@ -1,0 +1,17 @@
+.home .col {
+	font-weight:bold;
+	background-color: #a19d99;
+	color:#fff;
+	padding:2rem;
+	margin:0.5rem;
+	border-radius:5px;
+	-moz-box-shadow:    1px 1px 2px 2px #303030;
+  -webkit-box-shadow: 1px 1px 2px 2px #303030;
+  box-shadow:         1px 1px 2px 2px #303030;
+}
+h2 {
+	text-align:center;
+}
+.home a.col {
+	text-decoration:none;
+}
