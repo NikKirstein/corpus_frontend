@@ -10,6 +10,7 @@ import { TextComponent } from './text/text.component';
 import { RestAPI } from './restAPI.service';
 import { SearchComponent } from './search/search.component';
 import { NotFoundComponent } from './404/notFound.component';
+import { TagCloudModule } from 'angular-tag-cloud-module'
 
 const appRoutes: Routes = [
   { path: 'text/:id', component: TextComponent },
@@ -50,7 +51,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false }
-    )
+    ),
+    TagCloudModule
   ],
   providers: [RestAPI],
   bootstrap: [AppComponent]

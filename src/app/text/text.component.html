@@ -26,11 +26,15 @@
 	  <dd *ngIf="TextObject.field_toefl_total" class="col-sm-4">{{ TextObject.field_toefl_total }}</dd>		    	
 	 </dl>
 	<div class="row">
-		<div class="col-md-11 light-panel">
+		<div class="col-md-8 light-panel">
 			<div *ngIf="TextObject">
   			<h2>Text {{ TextObject.title }}</h2>
   			<div [innerHTML]="TextObject.field_text"></div>
 			</div>
+		</div>
+		<div class="col-md-3 light-panel">
+			<h3>Words : {{ Wordcount }}</h3>
+			<div *ngFor="let result of Frequency">{{ result[0] }} ({{result[1]}})</div>
 		</div>
 	</div>
 </div>

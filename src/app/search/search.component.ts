@@ -46,7 +46,7 @@ export class SearchComponent {
     else {
       this.RestAPI.getSearchResults(term).then(response => {
         this.SearchResults = response;
-        console.log(response.search_results);
+        //console.log(response.search_results);
         if (typeof response.search_results === 'undefined') {
           this.NotFound = true;
         }
