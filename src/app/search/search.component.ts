@@ -29,6 +29,7 @@ export class SearchComponent {
 
   SearchResults: {};
   NotFound: boolean;
+  Placeholder: string;
 
   get(): void {
     var id = this.route.params['_value'].string;
@@ -44,6 +45,7 @@ export class SearchComponent {
     if (term == '') {
     }
     else {
+      this.Placeholder = "Search for '" + term + "'";
       this.RestAPI.getSearchResults(term).then(response => {
         this.SearchResults = response;
         //console.log(response.search_results);

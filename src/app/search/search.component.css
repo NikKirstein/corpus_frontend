@@ -13,6 +13,16 @@ font-size:0.8rem;
   border-radius:5px;
   padding:0.5rem;	
 }
+.search-result a {
+	text-decoration:none;
+	color:black;
+}
+.search-result:nth-child(odd):hover {
+	background-color:#e5e5e5;
+}
+.search-result:nth-child(even):hover {
+	background-color:#e5e5e5;
+}
 .search-result:nth-child(even) {
   background-color: #f9f9f9;
   border: 1px solid #e5e5e5;

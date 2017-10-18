@@ -100,10 +100,10 @@
 
     <div class="col-sm-9 search-results">
 			
-				<form id="search-box" class="form-inline">
+			<form id="search-box" class="form-inline">
 			  <input #searchBox id="search-box" name="keywords" class="form-control" placeholder="Enter keywords..." [(ngModel)]="inputted" />
 			  <button name="submit" class="btn btn-secondary" (click)="search(searchBox.value)">Search</button>
-			  </form>
+			 </form>
 			
 			<details>
 			  <summary>Advanced Search</summary>
@@ -118,6 +118,7 @@
   				<input type="radio" name="matching"> Does not contain keywords
 			  </details>
 			</details>
+			<h3>{{ Placeholder }}</h3>
 			<div *ngIf="SearchResults">
 				<div class="row search-headings">
 					<div class="col-md-2">ID</div>
@@ -128,16 +129,18 @@
 				</div>							
 
 				<div class="search-result" *ngFor="let result of SearchResults.search_results">
-					<div class="row">
-					  <div class="col-md-2"><a routerLink="/text/{{result.title}}" routerLinkActive="active"><strong>{{result.title}}</strong></a></div>
-					  <div class="col-md-2">Assignment</div>
-					  <div class="col-md-2">Draft</div>
-					  <div class="col-md-2">College</div>
-					  <div class="col-md-2">{{ result.field_toefl_total }}</div>
-				  </div>
-				  <div class="row">
-						<div class="col-md-12" *ngIf="result.search_api_excerpt" [innerHTML]="result.search_api_excerpt"></div>
-					</div>
+					<a routerLink="/text/{{result.title}}" routerLinkActive="active">
+						<div class="row">
+							 <div class="col-md-2"><strong>{{result.title}}</strong></div>
+							 <div class="col-md-2">{{result.field_assignment}}</div>
+							 <div class="col-md-2">{{result.field_draft}}</div>
+							 <div class="col-md-2">{{result.field_college}}</div>
+							 <div class="col-md-2">{{ result.field_toefl_total }}</div>
+					  </div>
+					  <div class="row">
+							<div class="col-md-12" *ngIf="result.search_api_excerpt" [innerHTML]="result.search_api_excerpt"></div>
+						</div>
+					</a>
 				</div>
 
 			</div><!-- SearchResults -->
